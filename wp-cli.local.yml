@@ -1,0 +1,10 @@
+require: _config/local.php
+
+core install:
+  url: localhost:8080
+  title: Macnulti Libros
+  admin_user: mood
+  admin_password: getenv('SECRET')
+  admin_email: macnulti@mood481.es
+  skip_email: true
+
