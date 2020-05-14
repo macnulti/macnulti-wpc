@@ -1,0 +1,7 @@
+.env*
+/vendor/
+
+/*.sublime-*
+.idea/
+
+.DS_Store
