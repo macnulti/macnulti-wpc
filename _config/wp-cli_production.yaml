@@ -1,0 +1,7 @@
+core install:
+  url: tienda.macnulti.es
+  title: Macnulti Libros
+  admin_user: mood
+  admin_password: getenv('ADMIN_PASS')
+  admin_email: tienda@macnulti.es
+  skip_email: true

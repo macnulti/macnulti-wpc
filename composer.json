@@ -1,0 +1,21 @@
+{
+    "name": "macnulti/wpc",
+    "type": "project",
+    "authors": [
+        {
+            "name": "JD Cáceres Tapia",
+            "email": "jdct@macto.es"
+        }
+    ],
+    "scripts": {
+    	"wp": "vendor/bin/wp --allow-root",
+    	"salts": "@wp config shuffle-salts",
+    	"dev-db-init": "@wp core install",
+    	"dev-db-reset": "@wp db reset --yes",
+    	"setup": "cp _config/wp-cli.production.yaml src/wp.cli.yaml && cd src && @wp config set ADMIN_PASS "
+    },
+    "require-dev": {
+        "wp-cli/wp-cli-bundle": "*",
+        "vlucas/phpdotenv": "^4.1"
+    }
+}
