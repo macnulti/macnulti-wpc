@@ -17,7 +17,7 @@ RUN apt-get update; \
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
-COPY _config/msmtprc /etc/msmtprc
+COPY _docker/wp-php/msmtprc /etc/msmtprc
 RUN echo "sendmail_path = /usr/bin/msmtp -t" >> /usr/local/etc/php/conf.d/sendmail.ini
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer

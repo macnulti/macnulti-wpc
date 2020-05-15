@@ -1,8 +1,10 @@
 .env*
+wp
 /vendor/
 _docker/database
+_docker/**/*rc
+
 
 /*.sublime-*
 .idea/
-
 .DS_Store
