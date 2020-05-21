@@ -9,7 +9,7 @@
     ],
     "scripts": {
     	"db-reset": "wp db reset --yes",
-    	"pre-setup": "cp _config/wp-cli.production.yaml src/wp.cli.yaml",
+    	"pre-setup": "cp _config/wp-cli_production.yaml wp-cli.yaml",
         "setup": "_config/setup.sh"
     },
     "require-dev": {
