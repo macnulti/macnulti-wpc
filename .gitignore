@@ -4,6 +4,12 @@ wp
 _docker/database
 _docker/**/*rc
 
+/data/
+/wp-content/mu-plugins/
+/wp-content/plugins/s3-uploads/
+/wp-content/uploads/
+/wp-content/upgrade/
+
 
 /*.sublime-*
 .idea/
