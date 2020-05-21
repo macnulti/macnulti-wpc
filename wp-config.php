@@ -58,7 +58,7 @@ define( 'AUTH_SALT',         '' );
 define( 'SECURE_AUTH_SALT',  '' );
 define( 'LOGGED_IN_SALT',    '' );
 define( 'NONCE_SALT',        '' );
-define( 'WP_CACHE_KEY_SALT', '' );
+
 
 /**
  * WordPress Database Table prefix.
@@ -68,8 +68,18 @@ define( 'WP_CACHE_KEY_SALT', '' );
  */
 $table_prefix = getenv('DB_TABLE_PREFIX');
 
+$isProduction = getenv('ENV_MODE') === 'production';
+define('WP_DEBUG', !$isProduction);
+define('WPLANG', 'es_ES');
 
-define('WP_DEBUG', true);
+define('UPLOADS', 'data');
+
+// S3 Uploads
+# define( 'S3_UPLOADS_BUCKET', getenv('S3_BUCKET') );
+# define( 'S3_UPLOADS_REGION', getenv('S3_REGION') );
+# define( 'S3_UPLOADS_KEY', getenv('S3_KEY') );
+# define( 'S3_UPLOADS_SECRET', getenv('S3_SECRET') );
+
 
 /* That's all, stop editing! Happy publishing. */
 
@@ -77,6 +87,7 @@ define('WP_DEBUG', true);
 if ( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', dirname( __FILE__ ) . '/' );
 }
+
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';

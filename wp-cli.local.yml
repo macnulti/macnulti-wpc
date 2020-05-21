@@ -1,10 +1,15 @@
-require: _config/local.php
+# require: _config/load-env.php
+
+config create:
+  dbname: getenv('DB_NAME')
+  dbuser: getenv('DB_USER')
+  dbhost: getenv('DB_HOST')
+  dbprefix: wp_devel_
 
 core install:
   url: localhost:8080
   title: Macnulti Libros
   admin_user: mood
-  admin_password: getenv('SECRET')
   admin_email: macnulti@mood481.es
   skip_email: true
 

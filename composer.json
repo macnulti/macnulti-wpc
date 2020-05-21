@@ -8,14 +8,15 @@
         }
     ],
     "scripts": {
-    	"wp": "vendor/bin/wp --allow-root",
-    	"salts": "@wp config shuffle-salts",
-    	"dev-db-init": "@wp core install",
-    	"dev-db-reset": "@wp db reset --yes",
-    	"setup": "cp _config/wp-cli.production.yaml src/wp.cli.yaml && cd src && @wp config set ADMIN_PASS "
+    	"db-reset": "wp db reset --yes",
+    	"pre-setup": "cp _config/wp-cli.production.yaml src/wp.cli.yaml",
+        "setup": "_config/setup.sh"
     },
     "require-dev": {
-        "wp-cli/wp-cli-bundle": "*",
-        "vlucas/phpdotenv": "^4.1"
+        "vlucas/phpdotenv": "^4.1",
+        "scssphp/scssphp": "^1.1"
+    },
+    "require": {
+        "humanmade/s3-uploads": "^2.2"
     }
 }
