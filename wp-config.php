@@ -18,28 +18,19 @@
  * @package WordPress
  */
 
-// DB Config from Env
+// Load env vars from .env if available
+if (file_exists('.env')) {
+    require_once '_config/environment.php';
+}
 
+// DB config
 
-// ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
 define( 'DB_NAME', getenv('DB_NAME'));
-
-/** MySQL database username */
 define( 'DB_USER', getenv('DB_USER'));
-
-/** MySQL database password */
 define( 'DB_PASSWORD', getenv('DB_PASS'));
-
-/** MySQL hostname */
 define( 'DB_HOST', getenv('DB_HOST'));
-
-/** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
-
-/** The Database Collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
-
 
 /**
  * Authentication Unique Keys and Salts.
@@ -59,20 +50,15 @@ define( 'SECURE_AUTH_SALT',  '' );
 define( 'LOGGED_IN_SALT',    '' );
 define( 'NONCE_SALT',        '' );
 
-
-/**
- * WordPress Database Table prefix.
- *
- * You can have multiple installations in one database if you give each
- * a unique prefix. Only numbers, letters, and underscores please!
- */
+// Tables prefix
 $table_prefix = getenv('DB_TABLE_PREFIX');
 
+// Uploads dir (relative to base path)
+define('UPLOADS', 'data');
+
+// debug
 $isProduction = getenv('ENV_MODE') === 'production';
 define('WP_DEBUG', !$isProduction);
-define('WPLANG', 'es_ES');
-
-define('UPLOADS', 'data');
 
 // S3 Uploads
 # define( 'S3_UPLOADS_BUCKET', getenv('S3_BUCKET') );
@@ -85,7 +71,7 @@ define('UPLOADS', 'data');
 
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
-	define( 'ABSPATH', dirname( __FILE__ ) . '/' );
+	define( 'ABSPATH', __DIR__ . '/' );
 }
 
 

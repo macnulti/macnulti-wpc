@@ -8,15 +8,16 @@
         }
     ],
     "scripts": {
-    	"db-reset": "wp db reset --yes",
-    	"pre-setup": "cp _config/wp-cli_production.yaml wp-cli.yaml",
+    	"db-reset": "wp db clean --yes",
+        "build-css": "vendor/.bin/pscss --style=compressed wp-content/themes/jimmy20/src/_all.scss >  wp-content/themes/jimmy20/assets/base",
+    	"pre-setup": "cp _config/wp-cli_production.yaml wp-cli.yml",
         "setup": "_config/setup.sh"
     },
     "require-dev": {
-        "vlucas/phpdotenv": "^4.1",
         "scssphp/scssphp": "^1.1"
     },
     "require": {
+        "vlucas/phpdotenv": "^4.1",
         "humanmade/s3-uploads": "^2.2"
     }
 }
