@@ -1,0 +1,116 @@
+body.page-id-5752 {
+    #main-header,
+    .et-fixed-header#main-header,
+    .et_pb_counter_amount,
+    .et_pb_featured_table .et_pb_pricing_heading,
+    .et_quote_content,
+    .et_link_content,
+    .et_audio_content,
+    .et_pb_post_slider.et_pb_bg_layout_dark,
+    .et_slide_in_menu_container,
+    .et_pb_contact p input[type="radio"]:checked+label i:before {
+        background-color: $blackColor;
+    }
+
+    a,
+    .woocommerce-Price-amount,
+    .product_meta .posted_in a {
+        color: $blackColor;
+    }
+
+    form.cart button.button {
+        border-color: $blackColor;
+        color: $blackColor;
+        &:hover {
+            border-color: $blackColor;
+            color: scale-color($blackColor, $lightness: 30%);
+        }
+    }
+
+    .woocommerce-breadcrumb,
+    .woocommerce-result-count,
+    .woocommerce-ordering,
+    p.stock.in-stock,
+    &.archive .woocommerce-products-header,
+    header#main-header .current-location,
+    .et_slide_menu_top .et-search-form {
+        display: none;
+    }
+
+    .logo_container {
+        background: url('http://miradasdecine.es/data/2016/02/macnulti-logo.png') no-repeat;
+        background-size: contain;
+        img#logo {
+            display: none;
+        }
+    }
+
+    // Menu
+    .et_slide_in_menu_container {
+        .et_slide_menu_top {
+            ul.et-social-icons {
+                float: right;
+            }
+            a.et-cart-info {
+                display: block;
+                clear: both;
+                color: #fff;
+                span {
+                    font-size: 1rem;
+                }
+            }
+        }
+        .et_mobile_menu {
+            li, li.sep {
+                display: block;
+                &:not(.macnulti-item) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    // Social Icons
+    .et-social-icons  {
+        li {
+            display: initial;
+            &:not(.macnulti-item) {
+                display: none;
+            }
+        }
+        .et-social-icon {
+            a {
+                color: $blackColor;
+                &:hover {
+                    color: #fefefe;
+                }
+            }
+        }
+    }
+
+    // Footer
+    #main-footer {
+        #et-footer-nav {
+            display: none;
+        }
+        #footer-info  {
+            .macnulti {
+                display: inline-block;
+            }
+            .miradas {
+                display: none;
+            }
+        }
+    }
+    .front-books {
+        .et_pb_blurb .et_pb_image_wrap {
+            height: 700px;
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+}
+
+
