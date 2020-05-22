@@ -19,8 +19,11 @@
  */
 
 // Load env vars from .env if available
-if (file_exists('.env')) {
-    require_once '_config/environment.php';
+if (file_exists(__DIR__ . '/.env')) {
+    require __DIR__ . '/vendor/autoload.php';
+
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+    $dotenv->load();
 }
 
 // DB config
